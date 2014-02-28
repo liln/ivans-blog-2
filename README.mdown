@@ -16,27 +16,27 @@ foo%'); INSERT INTO posts (id,title,body,created_at,updated_at) VALUES (99,'hack
 And causing problems. After fixing those problems, upgrading to Rails 4, and generating/hiding the new secret key, things are starting to look a bit better.
 
 
-## +BRAKEMAN REPORT+
++BRAKEMAN REPORT+
 
 Application path: /Users/lillian/CodeFellows/ivan_the_terribles_blog-insecure
+
 Rails version: 4.0.3
+
 Brakeman version: 2.4.1
+
 Started at 2014-02-27 22:27:32 -0800
+
 Duration: 0.225807 seconds
+
 Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NumberToCurrency, QuoteTableName, Redirect, Render, RenderDoS, ResponseSplitting, SQL, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoS, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing
 
 
 +SUMMARY+
 
-+-------------------+-------+
-| Scanned/Reported  | Total |
-+-------------------+-------+
-| Controllers       | 4     |
-| Models            | 3     |
-| Templates         | 21    |
-| Errors            | 0     |
-| Security Warnings | 0 (0) |
-+-------------------+-------+
-
-
-
+ Scanned/Reported  | Total
+--- | ---
+Controllers | 4
+Models | 3
+Templates | 21
+Errors | 0
+Security Warnings | 0 (0)
