@@ -1,12 +1,6 @@
-# My New Blog!
+# Ivan's Newer More Secure Blog!
 
-I've got a lot to say, and now I have a place to say it!!!!!
-
-Read all my amazing posts!!!!! You can load them into the app with: `rake load_blog:load_shit`
-
-Since I know you want to read them all, I designed my page to show EVERYTHING on the front page of the site!!!!!
-
-I know it is a little slow (but totes worth it!!!!)... _Do you know how I can make it faster?_
+This blog started out a mess... accepting crap like this:
 
 XSS:
 ```
@@ -18,3 +12,31 @@ SQL Injection:
 ```
 foo%'); INSERT INTO posts (id,title,body,created_at,updated_at) VALUES (99,'hacked','hacked alright','2013-07-18','2013-07-18'); SELECT "posts".* FROM "posts" WHERE (title like '%anything
 ```
+
+And causing problems. After fixing those problems, upgrading to Rails 4, and generating/hiding the new secret key, things are starting to look a bit better.
+
+
+## +BRAKEMAN REPORT+
+
+Application path: /Users/lillian/CodeFellows/ivan_the_terribles_blog-insecure
+Rails version: 4.0.3
+Brakeman version: 2.4.1
+Started at 2014-02-27 22:27:32 -0800
+Duration: 0.225807 seconds
+Checks run: BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NumberToCurrency, QuoteTableName, Redirect, Render, RenderDoS, ResponseSplitting, SQL, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoS, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing
+
+
++SUMMARY+
+
++-------------------+-------+
+| Scanned/Reported  | Total |
++-------------------+-------+
+| Controllers       | 4     |
+| Models            | 3     |
+| Templates         | 21    |
+| Errors            | 0     |
+| Security Warnings | 0 (0) |
++-------------------+-------+
+
+
+
